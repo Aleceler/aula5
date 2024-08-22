@@ -1,0 +1,49 @@
+.pokemonDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+}
+
+.pokemonName{
+    width: 100%;
+
+    h2 {
+        color: gray;
+    }
+
+    span {
+        color: black;
+        font-weight: bold;
+    }
+}
+
+.pokemonTypes{
+    width: 100%;
+
+    h2 {
+        color: gray;
+    }
+
+    span {
+        color: black;
+        font-weight: bold;
+    }
+}
+
+.pokemonImage{
+    width: 150px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+}

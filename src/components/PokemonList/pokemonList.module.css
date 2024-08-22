@@ -1,0 +1,26 @@
+.pokemonListContainer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    padding: 10px;
+    margin: 5px;
+    background: #fffaf0;
+    box-shadow: 0 4px 8px rgba(211, 211, 211, 0.3);
+    border-radius: 5px;
+}
+
+.pokemonName{
+    font-weight: bold;
+}
+
+.link{
+    color: cornflowerblue;
+    font-weight: bold;
+}
