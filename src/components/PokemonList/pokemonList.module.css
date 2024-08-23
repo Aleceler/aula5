@@ -8,7 +8,8 @@
 .card {
     display: flex;
     flex-direction: column;
-    width: 320px;
+    position: relative;
+    width: 180px;
     padding: 10px;
     margin: 5px;
     background: #fffaf0;
@@ -17,10 +18,16 @@
 }
 
 .pokemonName{
-    font-weight: bold;
+    @apply font-bold text-red-600;
 }
 
 .link{
     color: cornflowerblue;
     font-weight: bold;
+}
+
+.pokeballImage{
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
 }
