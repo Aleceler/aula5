@@ -1,41 +1,44 @@
-import React, {useEffect, useState} from "react";
-import {fetchAllPokemons} from '../../services/pokemonService.ts'
-import PokemonListComponent from "../../components/PokemonList"
+import React, { useEffect, useState } from "react";
+import { fetchAllPokemons } from "../../services/pokemonService.ts";
+import PokemonListComponent from "../../components/PokemonList";
+import Header from "../../components/Header";
 
 interface PokemonList {
-    name: string,
-    url: string
+  name: string;
+  url: string;
 }
+
 const Pokemons = () => {
-    const [pokemonList, setPokemonList] = useState<PokemonList>()
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+  const [pokemonList, setPokemonList] = useState<PokemonList>();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        const fetchPokemon = async () => {
-            try {
-                const data = await fetchAllPokemons()
-                setPokemonList(data.results);
-            } catch (error) {
-                console.error(error)
-                setError('Failed to fetch Pokémon details');
-            } finally {
-                setLoading(false);
-            }
-        };
+  useEffect(() => {
+    const fetchPokemon = async () => {
+      try {
+        const data = await fetchAllPokemons();
+        setPokemonList(data.results);
+      } catch (error) {
+        console.error(error);
+        setError("Failed to fetch Pokémon details");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-        fetchPokemon();
-    }, []);
+    fetchPokemon();
+  }, []);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>{error}</div>;
-    if (!pokemonList) return null;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+  if (!pokemonList) return null;
 
-    return <div>
-                <PokemonListComponent pokemonList={pokemonList}/>
-            </div>
+  return (
+    <div>
+      <Header />
+      <PokemonListComponent pokemonList={pokemonList} />
+    </div>
+  );
+};
 
-
-}
-
-export default Pokemons
+export default Pokemons;
